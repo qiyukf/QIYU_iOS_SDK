@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source_files = "**/ExportHeaders/**/*.h"
   s.vendored_libraries = "**/libQYSDK.a"
   s.resource  = "**/QYResource.bundle"
-  s.resource_bundles = {'QYResource' => ['**/QYResource/**/*.{nib, png, jpeg, jpg}']}
+  s.resource_bundles = {'QYResource' => ['**/QYResource.bundle/**/*.{nib, png, jpeg, jpg}']}
   s.framework = 'UIKit','CoreText','MobileCoreServices','SystemConfiguration','AVFoundation','CoreTelephony','CoreMedia','AudioToolbox'
   s.libraries = 'z','stdc++.6.0.9','sqlite3.0'
   s.requires_arc = true
