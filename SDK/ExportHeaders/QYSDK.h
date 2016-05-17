@@ -3,7 +3,7 @@
 //  QYSDK
 //
 //  Created by towik on 12/21/15.
-//  Copyright (c) 2015 Netease. All rights reserved.
+//  Copyright (c) 2016 Netease. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -33,24 +33,28 @@ typedef void(^QYCompletionBlock)();
  *  @param appKey  appKey 对应管理后台分配的appkey
  *  @param appName appName(就是SDK 1.0.0版本的cerName,参数名变了) 对应管理后台添加一个app时填写的App名称
  */
-- (void)registerAppId:(NSString *)appKey
-              appName:(NSString *)appName;
+- (void)registerAppId:(NSString *)appKey appName:(NSString *)appName;
 
 /**
- *  追踪用户浏览信息
+ *  返回客服聊天ViewController，必须嵌入到UINavigationController中，全局只能有一个sessionViewController实例
  *
- *  @param urlString  浏览url
- *  @param attributes 附加信息
+ *  @return 会话ViewController
  */
-- (void)trackHistory:(NSString *)urlString
-      withAttributes:(NSDictionary *)attributes;
+- (QYSessionViewController *)sessionViewController;
 
 /**
- *  设置个人信息。用户帐号登录成功之后，调用此函数
+ *  返回自定义UI类,通过此类可以设置sessionViewController内的界面效果
  *
- *  @param userInfo 个人信息
+ *  @return 自定义UI类
  */
-- (void)setUserInfo:(QYUserInfo *)userInfo;
+- (QYCustomUIConfig *)customUIConfig;
+
+/**
+ *  返回会话管理类
+ *
+ *  @return 会话管理类
+ */
+- (id<YSFConversationManager>)conversationManager;
 
 /**
  *  更新推送token
@@ -67,6 +71,13 @@ typedef void(^QYCompletionBlock)();
 - (void)logout:(QYCompletionBlock)completion;
 
 /**
+ *  设置个人信息。用户帐号登录成功之后，调用此函数
+ *
+ *  @param userInfo 个人信息
+ */
+- (void)setUserInfo:(QYUserInfo *)userInfo;
+
+/**
  *  返回AppKey
  *
  *  @return appKey
@@ -74,26 +85,12 @@ typedef void(^QYCompletionBlock)();
 - (NSString *)appKey;
 
 /**
- *  返回客服聊天ViewController，必须嵌入到UINavigationController中，全局只能有一个sessionViewController实例
+ *  追踪用户浏览信息;暂时客服端还没有入口可以查看这部分信息
  *
- *  @return 会话ViewController
+ *  @param urlString  浏览url
+ *  @param attributes 附加信息
  */
-- (QYSessionViewController *)sessionViewController;
-
-/**
- *  返回会话管理类
- *
- *  @return 会话管理类
- */
-- (id<YSFConversationManager>)conversationManager;
-
-/**
- *  返回自定义UI类
- *
- *  @return 自定义UI类
- */
-- (QYCustomUIConfig *)customUIConfig;
-
+- (void)trackHistory:(NSString *)urlString withAttributes:(NSDictionary *)attributes;
 
 /**
  *  已废弃，使用setUserInfo替代，设置userInfo.userId即可，userInfo.data忽略
