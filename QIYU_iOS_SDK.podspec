@@ -11,7 +11,8 @@ Pod::Spec.new do |s|
   s.platform = :ios 
   s.public_header_files = '**/ExportHeaders/**/*.h'
   s.source_files = "**/ExportHeaders/**/*.h"
-  s.vendored_libraries = '**/libQYSDK.a', '**/libaacplus.a', '**/libcrypto.a', '**/libevent.a'
+  s.vendored_libraries = '**/libQYSDK.a'
+  s.default_subspecs = '**/libaacplus.a', '**/libcrypto.a', '**/libevent.a'
   s.resource  = "**/QYResource.bundle"
   s.resource_bundles = {'QYResource' => ['**/QYResource.bundle/**/*.{nib, png, jpeg, jpg}']}
   s.framework = 'UIKit','CoreText','MobileCoreServices','SystemConfiguration','AVFoundation','CoreTelephony','CoreMedia','AudioToolbox'
