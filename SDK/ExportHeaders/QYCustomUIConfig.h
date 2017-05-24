@@ -124,6 +124,16 @@
 @property (nonatomic, strong) UIImage *serviceMessageBubblePressedImage;
 
 /**
+ *  输入框上方操作按钮文字颜色
+ */
+@property (nonatomic, strong) UIColor *actionButtonTextColor;
+
+/**
+ *  输入框上方操作按钮边框颜色
+ */
+@property (nonatomic, strong) UIColor *actionButtonBorderColor;
+
+/**
  *  消息竖直方向间距
  */
 @property (nonatomic, assign) CGFloat sessionMessageSpacing;
