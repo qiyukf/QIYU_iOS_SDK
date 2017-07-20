@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name     = 'QIYU_iOS_SDK'
-    s.version  = '3.7.1'
+    s.version  = '3.9.0'
     s.license  = { :"type" => "Copyright",
                  :"text" => " Copyright 2016 Netease \n"}  
     s.summary  = '网易七鱼客服访客端 iOS SDK'
