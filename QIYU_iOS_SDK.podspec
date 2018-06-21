@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     s.vendored_libraries = '**/libQYSDK.a', '**/libcrypto.a', '**/libevent.a'
     s.resource  = "**/QYResource.bundle"
     s.framework = 'UIKit','CoreText','MobileCoreServices','SystemConfiguration','AVFoundation','CoreTelephony','CoreMedia','AudioToolbox','AssetsLibrary'
-    s.libraries = 'z','sqlite3.0','xml2'
+    s.libraries = 'z','sqlite3.0','xml2','c++'
     s.requires_arc = true
 
 end
