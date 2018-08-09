@@ -31,6 +31,10 @@ typedef void (^QYBotClickBlock)(NSString *target, NSString *params);
  */
 typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
 
+/**
+ *  显示bot自定义信息回调
+ */
+typedef void (^QYShowBotCustomInfoBlock)(NSArray *array);
 
 /**
  *  自定义行为配置类
@@ -68,6 +72,11 @@ typedef void (^QYQuitWaitingBlock)(QuitWaitingType quitType);
  *  推送消息相关点击
  */
 @property (nonatomic, copy) QYLinkClickBlock pushMessageClick;
+
+/**
+ *  显示bot自定义信息
+ */
+@property (nonatomic, copy) QYShowBotCustomInfoBlock showBotCustomInfoBlock;
 
 @end
 

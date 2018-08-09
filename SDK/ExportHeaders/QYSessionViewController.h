@@ -10,6 +10,19 @@
 @class QYSource;
 @class QYCommodityInfo;
 
+@interface QYSelectedCommodityInfo : NSObject
+
+@property (nonatomic,copy)    NSString *target;
+@property (nonatomic,copy)    NSString *params;
+@property (nonatomic,copy)    NSString *p_status;
+@property (nonatomic,copy)    NSString *p_img;
+@property (nonatomic,copy)    NSString *p_name;
+@property (nonatomic,copy)    NSString *p_price;
+@property (nonatomic,copy)    NSString *p_count;
+@property (nonatomic,copy)    NSString *p_stock;
+
+@end
+
 /**
  *  输入区域上方工具栏内的按钮信息
  */
@@ -92,6 +105,11 @@ typedef void (^QYButtonClickBlock)(QYButtonInfo *action);
  *  发送商品信息展示
  */
 - (void)sendCommodityInfo:(QYCommodityInfo *)commodityInfo;
+
+/**
+ *  发送订单列表中选中的商品信息
+ */
+- (void)sendSelectedCommodityInfo:(QYSelectedCommodityInfo *)commodityInfo;
 
 @end
 
