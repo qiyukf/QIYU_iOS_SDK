@@ -1,4 +1,3 @@
-<highlight-oc />
 # 网易七鱼 iOS SDK 开发指南
 
 ## 简介
